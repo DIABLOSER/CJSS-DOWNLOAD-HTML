@@ -1,0 +1,247 @@
+/* style.css */
+:root {
+    --primary: #FA7298;
+    --primary-light: #FFB6C1;
+    --text: #2F4F4F;
+    --bg: #FDFCFB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Now', -apple-system, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.app-header {
+    margin-bottom: 4rem;
+}
+
+/* 更新后的样式 */
+.logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 40px;  /* 根据实际图片比例调整 */
+    height: 40px;
+    object-fit: contain;  /* 保持图片比例 */
+    transition: transform 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* 可选悬停动画 */
+.logo-icon:hover {
+    transform: rotate(15deg);
+}
+
+
+
+.hero {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-deco {
+    color: var(--primary-light);
+    font-weight: 300;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.4rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 20px rgba(250,114,152,0.15);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.capability-card {
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--primary);
+    transition: transform 0.3s;
+}
+
+.capability-card:hover .card-icon {
+    transform: rotate(15deg);
+}
+
+.visual-levels {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 4rem 0;
+}
+
+.level-node {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.level-node.active {
+    width: 24px;
+    border-radius: 6px;
+    background: var(--primary);
+}
+
+/* 新增轮播样式 */
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.level-node {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.level-node.active {
+    width: 24px;
+    border-radius: 6px;
+    background: var(--primary);
+}
+/* 页脚样式 */
+.site-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.footer-content {
+    line-height: 1.6;
+}
+
+.icp-info {
+    margin-top: 0.5rem;
+}
+
+.icp-info a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.icp-info a:hover {
+    color: var(--primary);
+}
+
+.divider {
+    margin: 0 0.8rem;
+    color: #ddd;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+}
